@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Register New Student</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .container {
+        padding-top: 50px;
+    }
+    .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .card-header {
+        background-color: #17a2b8;
+        color: #fff;
+        border-radius: 15px 15px 0 0;
+    }
+    .card-body {
+        padding: 30px;
+    }
+    .form-label {
+        font-weight: bold;
+    }
+    .form-control {
+        border-radius: 10px;
+    }
+    .btn-info {
+        background-color: #17a2b8;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+    .btn-info:hover {
+        background-color: #138496;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3> Student Information</h3>
+                </div>
+                <div class="card-body">
+                    <form action="#" th:action="@{/save}" th:object="${course}" method="post">
+                        <div class="form-group">
+                            <label for="id" class="form-label">Student ID</label>
+                            <input type="text" th:field="*{id}" id="id" class="form-control" placeholder="Enter Student ID" />
+                        </div>
+                        <div class="form-group">
+                            <label for="studentname" class="form-label">Student Name</label>
+                            <input type="text" th:field="*{studentname}" id="studentname" class="form-control" placeholder="Enter Student Name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="coursename" class="form-label">Course Name</label>
+                            <input type="text" th:field="*{coursename}" id="coursename" class="form-control" placeholder="Enter Course Name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="fee" class="form-label">Fee</label>
+                            <input type="text" th:field="*{fee}" id="fee" class="form-control" placeholder="Enter Fee" />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-info">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
