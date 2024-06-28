@@ -1,0 +1,107 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+    <!-- No Bootstrap or custom CSS needed -->
+</head>
+<body>
+<div th:fragment="styles">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+        .container {
+            padding-top: 30px;
+            max-width: 800px; /* Example max-width for container */
+            margin: 0 auto; /* Center align container */
+        }
+        .heading-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .heading-container h2 {
+            margin-bottom: 0;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+        th {
+            background-color: #343a40;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+        .btn-info, .btn-danger {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        .btn-info:hover, .btn-danger:hover {
+            background-color: #138496;
+        }
+    </style>
+</div>
+<div class="container">
+    <div class="heading-container">
+        <h2>Student Management</h2>
+        <a href="/addcourse" class="btn btn-primary">ADD NEW</a>
+    </div>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Student Name</th>
+                    <th>Course Name</th>
+                    <th>Fee</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="course : ${listcourse}">
+                    <td th:text="${course.id}"></td>
+                    <td th:text="${course.studentname}"></td>
+                    <td th:text="${course.coursename}"></td>
+                    <td th:text="${course.fee}"></td>
+                    <td>
+                        <a th:href="@{'/edit/' + ${course.id}}" class="btn btn-info">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{'/delete/' + ${course.id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+ 
