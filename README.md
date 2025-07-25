@@ -1,4 +1,4 @@
-<img width="1165" height="542" alt="Screenshot 2024-06-28 212755" src="https://github.com/user-attachments/assets/11561f00-ea73-472f-b251-d13077075842" /># SMS-Java-springboot
+## Student Management System-Java-springboot
 A comprehensive Student Management System built using Java and Spring Boot. This application is designed to manage Student Information
 
 ## 🚀 Features
